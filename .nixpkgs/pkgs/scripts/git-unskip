@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+for f in $@; do
+  git update-index --no-assume-unchanged $f;
+  git update-index --no-skip-worktree $f;
+done

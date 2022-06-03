@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+dest=$(echo "$1" | sed "s/$2/$3/")
+mv -v "$1" "$dest"

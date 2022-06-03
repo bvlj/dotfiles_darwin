@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+if [ $(command -v mpd) ]; then
+  mpd_pid=$(pgrep -x mpd)
+  if [ ! "$mpd_pid" ]; then
+    mpd ~/.mpd/mpd.conf
+  elif [ "$1" = "r" ]; then
+    kill $mpd_pid
+    mpd ~/.mpd/mpd.conf
+  fi
+  if [ $(command -v ncmpcpp) ]; then
+    ncmpcpp
+  fi
+fi
