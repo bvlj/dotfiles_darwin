@@ -19,6 +19,7 @@
 
 
     sessionPath = [
+      "/run/current-system/sw/bin"
       "$HOME/.nix-profile/bin"
       "$HOME/Library/Android/sdk/platform-tools/"
       "$HOME/.config/sh/scripts"
@@ -28,6 +29,7 @@
       ANDROID_HOME = "$HOME/Library/Android/sdk";
       EDITOR = "micro";
       JAVA_HOME = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home";
+      NIX_PATH = "darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:$HOME/.nix-defexpr/channels";
     };
   };
 
