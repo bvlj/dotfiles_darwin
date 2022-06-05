@@ -20,6 +20,7 @@
 
     sessionPath = [
       "/run/current-system/sw/bin"
+      "/usr/local/bin"
       "$HOME/.nix-profile/bin"
       "$HOME/Library/Android/sdk/platform-tools/"
       "$HOME/.config/sh/scripts"

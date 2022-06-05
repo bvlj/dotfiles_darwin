@@ -14,6 +14,7 @@
 
     sessionPath = [
       "/run/current-system/sw/bin"
+      "/usr/local/bin"
       "$HOME/.nix-profile/bin"
       "$HOME/.config/sh/scripts"
     ];

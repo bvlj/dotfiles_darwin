@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+# Expected file format:
+# Start    End      Part name
+# 00:00:00 00:08:21 01-file.mp3
+
+while read -r line; do
+  echo "$line" | awk '{ print $1; print "-to"; print $2; print $3; }' | xargs ffmpeg -i "$1" -acodec copy -ss
+done < "$2"
