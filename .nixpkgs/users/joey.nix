@@ -6,7 +6,7 @@
       gnused
       htop
       micro
-      nodejs-16.x
+      nodejs-16_x
       p7zip
       texlab
       texlive.combined.scheme-full
