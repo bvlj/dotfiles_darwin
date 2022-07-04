@@ -3,6 +3,7 @@
     file = import ../pkgs/home-files.nix;
 
     packages = with pkgs; [
+      bazel_5
       gnused
       htop
       micro
