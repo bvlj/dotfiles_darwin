@@ -1,0 +1,23 @@
+color-link default "#ebdacd,#140d13"
+color-link comment "#a4988f"
+
+color-link identifier "#d1a66e"
+
+color-link constant "#a7675e"
+color-link constant.number "#d56f58"
+color-link constant.string "#a7675e"
+
+color-link symbol "#f4cf90"
+
+color-link type "italic #706695"
+color-link type.keyword "#988bc7"
+
+color-link statusline "#140d13,#ebdacd"
+color-link tabbar "#140d13,#ebdacd"
+color-link indent-char "#706695"
+color-link line-number "#706695"
+color-link current-line-number "#ebdacd"
+
+color-link cursor-line "#281a25,#ebdacd"
+color-link color-column "#140d13"
+color-link type.extended "default"
