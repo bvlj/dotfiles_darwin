@@ -46,7 +46,7 @@ in
 
       dock = {
         autohide = true;
-        autohide-delay = "1000.0";
+        autohide-delay = 1000.0;
         minimize-to-application = true;
         mru-spaces = false;
         orientation = "bottom";
