@@ -77,7 +77,7 @@
     nix-chan = "nix-channel";
     nix-gc = "nix-collect-garbage -d";
     # open
-    open-last = "open \\$(find -s . -type f -maxdepth 1 | tail -n 1)";
+    open-last = "open \$(find -s . -type f -maxdepth 1 | tail -n 1)";
     # yt-dl
     yt-dl-mp3 = "youtube-dl --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'";
   };
