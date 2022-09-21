@@ -78,6 +78,8 @@
     nix-gc = "nix-collect-garbage -d";
     # open
     open-last = "open \$(find -s . -type f -maxdepth 1 | tail -n 1)";
+    # rand-str
+    rand-str = "LC_ALL=C tr -dc 'A-Za-z0-9!#$%&~' < /dev/urandom | head -c $1";
     # yt-dl
     yt-dl-mp3 = "youtube-dl --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'";
   };
