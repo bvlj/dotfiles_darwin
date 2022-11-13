@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+IDENTITIES=$(git config --global --name-only --get-regexp "user.*..name" | sed -e "s/^user.//" -e "s/.name$//" | tr "\n" " ")
+
+read -r -a array <<< "$IDENTITIES"
+
+select ID in "${array[@]}" "Quit"; do
+if [ "$ID" != "Quit" ]; then
+  git config user.name "$(git config user.${ID}.name)"
+  git config user.email "$(git config user.${ID}.email)"
+fi
+break
+done
