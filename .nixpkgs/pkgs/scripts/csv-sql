@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+csv_file=$1
+shift
+
+sqlite3 :memory: -cmd ".import --csv ${csv_file} $(echo ${csv_file} | sed 's|^.*/||' | sed 's/\.csv$//')"  -cmd '.mode column' $@
