@@ -4,7 +4,7 @@
     file = import ../pkgs/home-files.nix;
 
     packages = with pkgs; [
-      ffmpeg
+      ffmpeg-full
       gnused
       htop
       imagemagick
@@ -14,9 +14,7 @@
       ncmpcpp
       p7zip
       pass
-      youtube-dl
     ];
-
 
     sessionPath = [
       "/run/current-system/sw/bin"
@@ -32,6 +30,8 @@
       JAVA_HOME = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home";
       NIX_PATH = "darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:$HOME/.nix-defexpr/channels";
     };
+
+    stateVersion = "22.11";
   };
 
   programs = {

@@ -3,7 +3,7 @@
     file = import ../pkgs/home-files.nix;
 
     packages = with pkgs; [
-      bazel_5
+      bazel_6
       gnused
       htop
       micro
@@ -26,6 +26,8 @@
       JAVA_HOME = "/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home";
       NIX_PATH = "darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:/nix/var/nix/profiles/per-user/root/channels:$HOME/.nix-defexpr/channels";
     };
+
+    stateVersion = "22.11";
   };
 
   programs = {
