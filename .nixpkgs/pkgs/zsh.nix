@@ -7,7 +7,7 @@
 
   history = {
     ignoreSpace = true;
-    path = ".zsh_history";
+    path = "$HOME/.zsh_history";
     size = 10000;
   };
 
