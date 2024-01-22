@@ -1,29 +1,12 @@
-{ config, pkgs, ... }:
-
-let 
-  USER = builtins.getEnv "USER";
-in
+{ pkgs, ... }:
 {
-  imports = [
-    <home-manager/nix-darwin>
-  ];
-
-  home-manager = {
-    users.${USER}.imports = [ ./users/${USER}.nix ];
-  };
-
-  nix = {
-    package = pkgs.nix;
-    readOnlyStore = true;
-  };
-
-  services = {
-    nix-daemon = {
-      enable = true;
-    };
-  };
-
   system = {
+    activationScripts.postUserActivation.text = ''
+      # activateSettings -u will reload the settings from the database and apply them to the current session,
+      # so we do not need to logout and login again to make the changes take effect.
+      /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+    '';
+
     defaults = {
       NSGlobalDomain = {
         AppleEnableSwipeNavigateWithScrolls = true;
@@ -56,11 +39,12 @@ in
       };
 
       finder = {
+        _FXShowPosixPathInTitle = true;
         AppleShowAllExtensions = true;
         FXEnableExtensionChangeWarning = false;
         FXDefaultSearchScope = "SCcf";
         FXPreferredViewStyle = "Nlsv";
-        _FXShowPosixPathInTitle = true;
+        QuitMenuItem = true;
       };
 
       loginwindow = {
@@ -68,21 +52,20 @@ in
         SHOWFULLNAME = true;
       };
 
+      menuExtraClock = {
+        Show24Hour = true;
+      };
+
       trackpad = {
         Clicking = true;
+        TrackpadRightClick = true;
         TrackpadThreeFingerDrag = true;
       };
     };
-
-    stateVersion = 4;
   };
 
-  users = {
-    users = {
-      ${USER} = {
-        name = "${USER}";
-        home = "/Users/${USER}";
-      };
-    };
+  security = {
+    # Add ability to used TouchID for sudo authentication
+    pam.enableSudoTouchIdAuth = true;
   };
 }

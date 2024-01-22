@@ -5,8 +5,13 @@
     "*~"
   ];
 
+  lfs.enable = true;
+
   extraConfig = {
     user.useConfigOnly = true;
+
+    user.name = "Joey";
+    user.email = "bevilacquajoey@gmail.com";
 
     user.personal.name = "Joey";
     user.personal.email = "bevilacquajoey@gmail.com";

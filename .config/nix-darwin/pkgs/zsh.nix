@@ -3,12 +3,15 @@
   enable = true;
   enableAutosuggestions = true;
   enableCompletion = true;
-  enableSyntaxHighlighting  = true;
 
   history = {
     ignoreSpace = true;
     path = "$HOME/.zsh_history";
-    size = 10000;
+    size = 8192;
+  };
+
+  syntaxHighlighting = {
+    enable  = true;
   };
 
   initExtra = "
@@ -43,6 +46,9 @@
     zstyle ':vcs_info:*' actionformats '%F{green}(%a%c%u%m)%f '
     zstyle ':vcs_info:*' formats '%F{green}(%b%c%u%m)%f '
     PROMPT='%B%F{blue}%(!.%1~.%~)%f \${vcs_info_msg_0_}%(!.#.$)%b '
+
+    # Tokens
+    [[ -f \"$HOME/.config/shell/env.tokens.sh\" ]] && source \"$HOME/.config/shell/env.tokens.sh\"
   ";
 
   plugins = [
@@ -60,8 +66,6 @@
   shellAliases = {
     # .files
     dotfiles = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
-    # adb
-    adbRestart = "adb shell stop && adb shell start";
     # cd
     "..." = "cd ../..";
     "...." = "cd ../../..";
@@ -73,14 +77,9 @@
     grep = "grep --color=auto";
     # ls
     ls = "ls -1";
-    # nix
-    nix-chan = "nix-channel";
-    nix-gc = "nix-collect-garbage -d";
     # open
     open-last = "open \$(find -s . -type f -maxdepth 1 | tail -n 1)";
     # rand-str
     rand-str = "LC_ALL=C tr -dc 'A-Za-z0-9!#$%&~' < /dev/urandom | head -c $1";
-    # yt-dl
-    yt-dl-mp3 = "youtube-dl --extract-audio --audio-format mp3 -o '%(title)s.%(ext)s'";
   };
 }
