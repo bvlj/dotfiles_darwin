@@ -1,5 +1,17 @@
 { pkgs, ... }:
 {
+  launchd = {
+    user.agents.homeTmpCleanup = {
+      script = "find \"$HOME/tmp/\" -mtime +3 -delete";
+      serviceConfig = {
+        Label = "homeTmpCleanup";
+        LowPriorityIO = true;
+        ProcessType = "Background";
+        StartInterval = 86400; # Daily
+      };
+    };
+  };
+
   system = {
     activationScripts.postUserActivation.text = ''
       # activateSettings -u will reload the settings from the database and apply them to the current session,
