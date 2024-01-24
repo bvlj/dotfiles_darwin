@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+NIX_CONFIG="access-tokens = github.com=${GH_TOKEN}" nix shell $@
