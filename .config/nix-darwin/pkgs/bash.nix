@@ -1,6 +1,5 @@
 {
   enable = true;
-  enableCompletion = true;
 
   shellAliases = {
     # .files
