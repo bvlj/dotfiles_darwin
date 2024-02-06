@@ -44,8 +44,6 @@ in {
       EDITOR = "micro";
 
       ANDROID_HOME = "$HOME/Library/Android/sdk";
-      CUDA_CACHE_PATH = "$HOME/.cache/nv";
-      DOCKER_CONFIG = "$HOME/.config/docker";
       GHCUP_USE_XDG_DIRS = "true";
       GRADLE_USER_HOME = "$HOME/.local/share/gradle";
       LESSHISTFILE = "$HOME/.local/state/less/history";
