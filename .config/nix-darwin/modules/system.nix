@@ -2,12 +2,10 @@
 {
   launchd = {
     user.agents.homeTmpCleanup = {
-      script = "find \"$HOME/tmp/\" -mtime +3 -delete";
+      script = "touch /tmp/home-tmp-cleanup.txt; find \"$HOME/tmp\" -mindepth 1 -mtime +2 -delete";
       serviceConfig = {
         Label = "homeTmpCleanup";
-        LowPriorityIO = true;
-        ProcessType = "Background";
-        StartInterval = 86400; # Daily
+        StartInterval = 28800; # 3 times a day
       };
     };
   };
