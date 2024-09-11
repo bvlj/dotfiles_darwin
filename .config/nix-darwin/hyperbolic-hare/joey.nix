@@ -14,12 +14,13 @@ in {
 
     packages = with pkgs; [
       android-tools
-      bash
+      bashInteractive
       bazelisk
       bazel-buildtools
       ffmpeg-full
       gawk
-      git-repo
+      ghc
+      gnupg
       gnused
       gnutar
       htop
@@ -29,9 +30,10 @@ in {
       micro
       nodejs_20
       p7zip
-      python310
+      python312
       ripgrep
       rsync
+      shellcheck
       sqlite
     ];
 
@@ -39,11 +41,16 @@ in {
       "/run/current-system/sw/bin"
       "/etc/profiles/per-user/joey/bin"
       "/usr/local/bin"
-      "$HOME/.config/sh/scripts"
+      "$HOME/.local/bin"
     ];
 
     sessionVariables = {
       EDITOR = "micro";
+
+      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_STATE_HOME = "$HOME/.local/state";
 
       GHCUP_USE_XDG_DIRS = "true";
       GRADLE_USER_HOME = "$HOME/.local/share/gradle";
@@ -54,7 +61,7 @@ in {
       STACK_ROOT = "$HOME/.local/share/stack";
     };
 
-    stateVersion = "23.11";
+    stateVersion = "24.05";
   };
 
   programs = {

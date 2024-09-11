@@ -1,5 +1,5 @@
 {
-  ".config/sh/scripts" = {
+  ".local/bin" = {
     source = ./scripts;
     recursive = true;
   };

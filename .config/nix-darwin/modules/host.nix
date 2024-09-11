@@ -1,9 +1,4 @@
-{ ... }:
-
-let
-  hostname = "boring-bunny";
-  username = "u0";
-in {
+{ hostname, username, ... }: {
   networking.hostName = hostname;
   networking.computerName = hostname;
   system.defaults.smb.NetBIOSName = hostname;

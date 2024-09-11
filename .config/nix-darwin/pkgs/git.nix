@@ -28,5 +28,6 @@
     identity = "! git-identity";
     skip = "! git-skip";
     unskip = "! git-unskip";
+    todo = "!git --no-pager diff --binary --no-color --cached | grep -i '^+.*todo'";
   };
 }

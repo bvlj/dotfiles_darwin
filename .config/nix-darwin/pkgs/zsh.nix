@@ -1,13 +1,16 @@
 { pkgs, ... }: {
   autocd = true;
   enable = true;
-  enableAutosuggestions = true;
   enableCompletion = true;
 
   history = {
     ignoreSpace = true;
     path = "$HOME/.zsh_history";
     size = 8192;
+  };
+
+  autosuggestion = {
+    enable = true;
   };
 
   syntaxHighlighting = {
@@ -33,6 +36,8 @@
 
     # Del key
     bindkey '\\e[3~' delete-char
+
+    compinit -d \"$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION\"
 
     # Prompt
     autoload -Uz vcs_info

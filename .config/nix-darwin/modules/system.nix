@@ -72,6 +72,8 @@
         TrackpadThreeFingerDrag = true;
       };
     };
+
+    stateVersion = 5;
   };
 
   security = {
