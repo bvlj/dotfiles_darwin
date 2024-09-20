@@ -27,7 +27,7 @@
           home-manager.useGlobalPkgs = false;
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = inputs;
-          home-manager.users.joey = import ./hyperbolic-hare/joey.nix;
+          home-manager.users.u0 = import ./boring-bunny/u0.nix;
         }
       ];
     };
