@@ -8,6 +8,8 @@
   lfs.enable = true;
 
   extraConfig = {
+    core.ignorecase = false;
+
     user.useConfigOnly = true;
 
     user.name = "Joey";
