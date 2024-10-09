@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# Excel Online does not support exporting to CSV.
+# This script converts excel cells in the system clipboard to a csv file
+#
+# Dependencies
+# - Either pbpaste or xclip
+# - sed
+# - tr
+
+set -e
+
+PASTE_CMD="$(command -v xclip 2>/dev/null)"
+if [ -z "$PASTE_CMD" ]; then
+  # Maybe MacOS, try pbpaste...
+  PASTE_CMD="$(command -v pbpaste 2>/dev/null)"
+  if [ -z "$PASTE_CMD" ]; then
+    echo "Either pbpaste or xclip are required to read data from the system clipboard" 1>&2
+    exit 1
+  fi
+else
+  # Specify xclip paste command
+  PASTE_CMD="$PASTE_CMD -selection c -o"
+fi
+
+EXCEL_DATA="$(${PASTE_CMD})"
+echo "$EXCEL_DATA" | \
+  # Remove blank rows
+  sed '/^[[:space:]]*$/d' | \
+  # Escape quotes
+  sed 's/"/""/g' | \
+  # Wrap each cell in quotes
+  # DO NOT replace the tab (	) in the next line with spaces!
+  sed 's/	/","/g' | \
+  # Ensure LF line ending
+  tr -d '\r' | \
+  # Add quotes at the end of each line
+  sed 's/$/"/' | \
+  # Add quotes at the beginning of each line
+  sed 's/^/"/'
