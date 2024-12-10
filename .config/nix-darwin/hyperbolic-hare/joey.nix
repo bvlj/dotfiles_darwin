@@ -58,7 +58,7 @@ in {
       STACK_ROOT            = "$HOME/.local/share/stack";
     };
 
-    stateVersion = "24.05";
+    stateVersion = "24.11";
   };
 
   programs = {
