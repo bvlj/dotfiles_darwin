@@ -26,20 +26,41 @@
         AppleShowAllExtensions = true;
         AppleShowScrollBars = "WhenScrolling";
         AppleTemperatureUnit = "Celsius";
+        AppleWindowTabbingMode = "always";
         InitialKeyRepeat = 35;
         KeyRepeat = 2;
         NSDocumentSaveNewDocumentsToCloud = false;
         NSNavPanelExpandedStateForSaveMode = true;
         NSNavPanelExpandedStateForSaveMode2 = true;
+        _HIHideMenuBar = false;
+        "com.apple.keyboard.fnState" = true;
       };
 
       SoftwareUpdate = {
         AutomaticallyInstallMacOSUpdates = false;
       };
 
+      WindowManager = {
+        GloballyEnabled = false;
+        EnableStandardClickToShowDesktop = false;
+        EnableTiledWindowMargins = true;
+        StandardHideDesktopIcons = false;
+        StandardHideWidgets = true;
+      };
+
+      controlcenter = {
+        AirDrop = false;
+        BatteryShowPercentage = true;
+        Bluetooth = false;
+        Display = false;
+        NowPlaying = false;
+        Sound = false;
+      };
+
       dock = {
         autohide = true;
         autohide-delay = 1000.0;
+        expose-group-apps = false;
         minimize-to-application = true;
         mru-spaces = false;
         orientation = "bottom";
@@ -54,7 +75,9 @@
         FXEnableExtensionChangeWarning = false;
         FXDefaultSearchScope = "SCcf";
         FXPreferredViewStyle = "Nlsv";
+        FXRemoveOldTrashItems = true;
         QuitMenuItem = true;
+        ShowRemovableMediaOnDesktop = true;
       };
 
       loginwindow = {
@@ -63,6 +86,7 @@
       };
 
       menuExtraClock = {
+        FlashDateSeparators = false;
         Show24Hour = true;
       };
 
