@@ -58,10 +58,11 @@ in {
   };
 
   programs = {
-    zsh = import ../pkgs/zsh.nix pkgs;
     git    = import ../pkgs/git.nix;
     vim    = import ../pkgs/vim.nix pkgs;
     yazi   = import ../pkgs/yazi.nix;
+    yt-dlp = import ../pkgs/yt-dlp.nix;
+    zsh    = import ../pkgs/zsh.nix pkgs;
 
     home-manager = { enable = true; };
   };
