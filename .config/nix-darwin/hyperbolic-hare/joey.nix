@@ -63,9 +63,10 @@ in {
 
   programs = {
     bash = import ../pkgs/bash.nix;
-    git = import ../pkgs/git.nix;
     zsh = import ../pkgs/zsh.nix pkgs;
+    git  = import ../pkgs/git.nix;
     vim  = import ../pkgs/vim.nix pkgs;
+    yazi = import ../pkgs/yazi.nix;
 
     home-manager = { enable = true; };
   };
