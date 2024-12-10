@@ -10,6 +10,9 @@
   extraConfig = {
     core.ignorecase = false;
 
+    diff.tool = "vimdiff";
+    difftool.prompt = false;
+
     user.useConfigOnly = true;
 
     user.name = "Joey";

@@ -27,7 +27,6 @@ in {
       imagemagick
       jq
       libheif
-      micro
       nodejs_20
       p7zip
       python312
@@ -45,8 +44,6 @@ in {
     ];
 
     sessionVariables = {
-      EDITOR = "micro";
-
       XDG_CACHE_HOME = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
       XDG_DATA_HOME = "$HOME/.local/share";
@@ -68,6 +65,7 @@ in {
     bash = import ../pkgs/bash.nix;
     git = import ../pkgs/git.nix;
     zsh = import ../pkgs/zsh.nix pkgs;
+    vim  = import ../pkgs/vim.nix pkgs;
 
     home-manager = { enable = true; };
   };
