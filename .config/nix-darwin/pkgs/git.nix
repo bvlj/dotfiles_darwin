@@ -7,25 +7,46 @@
 
   lfs.enable = true;
 
+  attributes = [
+    "*.ipynb filter=ipynbStripOut"
+    "*.bat   text eol=crlf"
+  ];
+
   extraConfig = {
     core.ignorecase = false;
 
     diff.tool = "vimdiff";
     difftool.prompt = false;
 
-    user.useConfigOnly = true;
+    filter = {
+      ipynbStripOut = {
+        clean = "jq '.cells[].outputs = [] | .cells[].execution_count = null | .'";
+        required = true;
+        smudge = "cat";
+      };
+    };
 
-    user.name = "Joey";
-    user.email = "bevilacquajoey@gmail.com";
+    user = {
+      useConfigOnly = true;
 
-    user.personal.name = "Joey";
-    user.personal.email = "bevilacquajoey@gmail.com";
+      name = "Joey";
+      email = "bevilacquajoey@gmail.com";
 
-    user.usi.name = "Joey Bevilacqua";
-    user.usi.email = "bevilj@usi.ch";
+      lineage = {
+        name = "Joey";
+        email = "joey@lineageos.org";
+      };
 
-    user.lineage.name = "Joey";
-    user.lineage.email = "joey@lineageos.org";
+      personal = {
+        name = "Joey";
+        email = "bevilacquajoey@gmail.com";
+      };
+
+      usi = {
+        name = "Joey Bevilacqua";
+        email = "bevilj@usi.ch";
+      };
+    };
   };
 
   aliases = {
