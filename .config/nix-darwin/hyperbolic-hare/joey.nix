@@ -44,18 +44,18 @@ in {
     ];
 
     sessionVariables = {
-      XDG_CACHE_HOME = "$HOME/.cache";
+      XDG_CACHE_HOME  = "$HOME/.cache";
       XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      XDG_STATE_HOME = "$HOME/.local/state";
+      XDG_DATA_HOME   = "$HOME/.local/share";
+      XDG_STATE_HOME  = "$HOME/.local/state";
 
-      GHCUP_USE_XDG_DIRS = "true";
-      GRADLE_USER_HOME = "$HOME/.local/share/gradle";
-      LESSHISTFILE = "$HOME/.local/state/less/history";
-      JAVA_HOME = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home";
-      NPM_CONFIG_USERCONFIG="$HOME/.config/npm/npmrc";
-      SQLITE_HISTORY = "$HOME/.cache/sqlite_history";
-      STACK_ROOT = "$HOME/.local/share/stack";
+      GHCUP_USE_XDG_DIRS    = "true";
+      GRADLE_USER_HOME      = "$HOME/.local/share/gradle";
+      LESSHISTFILE          = "$HOME/.local/state/less/history";
+      JAVA_HOME             = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home";
+      NPM_CONFIG_USERCONFIG = "$HOME/.config/npm/npmrc";
+      SQLITE_HISTORY        = "$HOME/.cache/sqlite_history";
+      STACK_ROOT            = "$HOME/.local/share/stack";
     };
 
     stateVersion = "24.05";
