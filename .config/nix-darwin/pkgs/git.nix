@@ -13,9 +13,15 @@
   ];
 
   extraConfig = {
+    branch.sort = "committerdate";
+
     core.ignorecase = false;
 
-    diff.tool = "vimdiff";
+    diff = {
+      algorithm = "histogram";
+      colorMoved = true;
+      tool = "vimdiff";
+    };
     difftool.prompt = false;
 
     filter = {
@@ -25,6 +31,10 @@
         smudge = "cat";
       };
     };
+
+    init.defaultBranch = "main";
+
+    merge.conflictstyle = "zdiff3";
 
     user = {
       useConfigOnly = true;
