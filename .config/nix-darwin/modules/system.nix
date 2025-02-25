@@ -44,6 +44,9 @@
         GloballyEnabled = false;
         EnableStandardClickToShowDesktop = false;
         EnableTiledWindowMargins = true;
+        EnableTilingByEdgeDrag = true;
+        EnableTilingOptionAccelerator = true;
+        EnableTopTilingByEdgeDrag = true;
         StandardHideDesktopIcons = false;
         StandardHideWidgets = true;
       };
