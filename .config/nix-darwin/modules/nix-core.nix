@@ -5,22 +5,21 @@
 
     # Weekly auto GC
     gc = {
-      automatic = lib.mkDefault true;
-      options = lib.mkDefault "--delete-older-than 7d";
+      automatic = true;
+      options   = "--delete-older-than 7d";
     };
 
     settings = {
-        experimental-features = [ "nix-command" "flakes" ];
         # https://github.com/NixOS/nix/issues/7273
-        auto-optimise-store = false;
+        auto-optimise-store   = false;
+        experimental-features = [ "nix-command" "flakes" ];
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Auto upgrade
-  services.nix-daemon.enable = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+    hostPlatform = "aarch64-darwin";
+  };
 
   programs.nix-index.enable = true;
 }

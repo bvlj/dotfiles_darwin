@@ -1,43 +1,40 @@
 { lib, pkgs, ... }:
 let
-  username = "u0";
+  username = "joey";
 in {
   home = {
-    username = username;
+    username      = username;
     homeDirectory = "/Users/${username}";
 
     activation = {
       removeExistingGitconfig = lib.hm.dag.entryBefore [ "checkLinkTargets" ] "rm -f $HOME/.gitconfig";
     };
 
-    file = import ../pkgs/home-files.nix;
+    file = import ./home-files.nix;
 
     packages = with pkgs; [
-      bashInteractive
+      android-tools
+      bazelisk
+      bazel-buildtools
       ffmpeg-full
       gawk
+      ghc
       gnupg
       gnused
       gnutar
-      htop
       imagemagick
-      jq
       libheif
-      nodejs_20
+      nodejs_22
       p7zip
-      python312
-      ripgrep
+      python313
       rsync
       shellcheck
-      sqlite
+      sqlite-interactive
+      texliveSmall
     ];
 
     sessionPath = [
-      "/run/current-system/sw/bin"
-      "/etc/profiles/per-user/u0/bin"
-      "/usr/local/bin"
       "$HOME/.local/bin"
-      "$HOME/Library/Android/sdk/platform-tools/"
     ];
 
     sessionVariables = {
@@ -46,24 +43,27 @@ in {
       XDG_DATA_HOME   = "$HOME/.local/share";
       XDG_STATE_HOME  = "$HOME/.local/state";
 
-      ANDROID_HOME          = "$HOME/Library/Android/sdk";
+      GHCUP_USE_XDG_DIRS    = "true";
       GRADLE_USER_HOME      = "$HOME/.local/share/gradle";
       LESSHISTFILE          = "$HOME/.local/state/less/history";
-      JAVA_HOME             = "/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home";
       NPM_CONFIG_USERCONFIG = "$HOME/.config/npm/npmrc";
       SQLITE_HISTORY        = "$HOME/.cache/sqlite_history";
     };
 
-    stateVersion = "24.11";
+    stateVersion = "25.05";
   };
 
   programs = {
-    git    = import ../pkgs/git.nix;
-    vim    = import ../pkgs/vim.nix pkgs;
-    yazi   = import ../pkgs/yazi.nix;
-    yt-dlp = import ../pkgs/yt-dlp.nix;
-    zsh    = import ../pkgs/zsh.nix pkgs;
-
-    home-manager = { enable = true; };
+    bash         = import ../pkgs/bash.nix;
+    git          = import ../pkgs/git.nix;
+    home-manager = import ../pkgs/home-manager.nix;
+    htop         = import ../pkgs/htop.nix;
+    mpv          = import ../pkgs/mpv.nix;
+    java         = import ../pkgs/java.nix pkgs;
+    ripgrep      = import ../pkgs/ripgrep.nix;
+    vim          = import ../pkgs/vim.nix pkgs;
+    vscode       = import ../pkgs/vscode.nix pkgs;
+    yazi         = import ../pkgs/yazi.nix;
+    zsh          = import ../pkgs/zsh.nix pkgs;
   };
 }

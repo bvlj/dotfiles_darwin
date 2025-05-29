@@ -1,5 +1,5 @@
 {
-  enable = true;
+  enable  = true;
   ignores = [
     ".DS_Store"
     "*~"
@@ -18,52 +18,36 @@
     core.ignorecase = false;
 
     diff = {
-      algorithm = "histogram";
+      algorithm  = "histogram";
       colorMoved = true;
-      tool = "vimdiff";
+      tool       = "vimdiff";
     };
+
     difftool.prompt = false;
 
     filter = {
       ipynbStripOut = {
-        clean = "jq '.cells[].outputs = [] | .cells[].execution_count = null | .'";
+        clean    = "jq '.cells[].outputs = [] | .cells[].execution_count = null | .'";
         required = true;
-        smudge = "cat";
+        smudge   = "cat";
       };
     };
 
     init.defaultBranch = "main";
 
+    log.date = "iso";
+
     merge.conflictstyle = "zdiff3";
 
     user = {
-      useConfigOnly = true;
-
-      name = "Joey";
+      name  = "Joey";
       email = "bevilacquajoey@gmail.com";
-
-      lineage = {
-        name = "Joey";
-        email = "joey@lineageos.org";
-      };
-
-      personal = {
-        name = "Joey";
-        email = "bevilacquajoey@gmail.com";
-      };
-
-      usi = {
-        name = "Joey Bevilacqua";
-        email = "bevilj@usi.ch";
-      };
     };
   };
 
   aliases = {
-    id = "! git-identity";
-    identity = "! git-identity";
-    skip = "! git-skip";
-    unskip = "! git-unskip";
-    todo = "!git --no-pager diff --binary --no-color --cached | grep -i '^+.*todo'";
+    skip     = "! git-skip";
+    unskip   = "! git-unskip";
+    todo     = "!git --no-pager diff --binary --no-color --cached | grep -i '^+.*todo'";
   };
 }

@@ -24,16 +24,17 @@
   '';
 
   plugins = with pkgs.vimPlugins; [
+    vim-better-whitespace
     vim-gitgutter
     vim-indent-guides
     vim-sensible
   ];
 
   settings = {
-    expandtab = true;
+    expandtab  = true;
     ignorecase = true;
-    number = true;
+    number     = true;
     shiftwidth = 2;
-    tabstop = 2;
+    tabstop    = 2;
   };
 }

@@ -1,23 +1,21 @@
 { pkgs, ... }: {
-  autocd = true;
   enable = true;
+
+  autocd = true;
+
   enableCompletion = true;
 
   history = {
     ignoreSpace = true;
-    path = "$HOME/.zsh_history";
-    size = 8192;
+    path        = "$HOME/.zsh_history";
+    size        = 8192;
   };
 
-  autosuggestion = {
-    enable = true;
-  };
+  autosuggestion.enable = true;
 
-  syntaxHighlighting = {
-    enable  = true;
-  };
+  syntaxHighlighting.enable = true;
 
-  initExtra = "
+  initContent = "
     # History search
     autoload -U up-line-or-beginning-search
     autoload -U down-line-or-beginning-search
@@ -60,31 +58,31 @@
     {
       name = "zsh-history-substring-search";
       src = pkgs.fetchFromGitHub {
-        owner = "zsh-users";
-        repo = "zsh-history-substring-search";
-        rev = "v1.0.2";
+        owner  = "zsh-users";
+        repo   = "zsh-history-substring-search";
+        rev    = "v1.0.2";
         sha256 = "0y8va5kc2ram38hbk2cibkk64ffrabfv1sh4xm7pjspsba9n5p1y";
       };
     }
   ];
 
   shellAliases = {
-    # .files
-    dotfiles = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     # cd
-    "..." = "cd ../..";
-    "...." = "cd ../../..";
-    croot = "cd \"./\$(git rev-parse --show-cdup 2>/dev/null)\" 2> /dev/null";
+    "..."     = "cd ../..";
+    "...."    = "cd ../../..";
+    croot     = "cd \"./\$(git rev-parse --show-cdup 2>/dev/null)\" 2> /dev/null";
+    # dotfiles
+    dotfiles  = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     # git
-    gitpick = "git cherry-pick";
-    gitlg = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative";
+    gitpick   = "git cherry-pick";
+    gitlg     = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative";
     # grep
-    grep = "grep --color=auto";
+    grep      = "grep --color=auto";
     # ls
-    ls = "ls -1";
+    ls        = "ls -1";
     # open
     open-last = "open \$(find -s . -type f -maxdepth 1 | tail -n 1)";
     # rand-str
-    rand-str = "LC_ALL=C tr -dc 'A-Za-z0-9!#$%&~' < /dev/urandom | head -c $1";
+    rand-str  = "LC_ALL=C tr -dc 'A-Za-z0-9!#$%&~' < /dev/urandom | head -c $1";
   };
 }

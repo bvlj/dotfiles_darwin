@@ -17,14 +17,14 @@
 #     ├── id_rsa
 #     └── id_rsa.pub
 ssh-add -D
-if [ -z $1 ]; then
+if [ -z "$1" ]; then
     # Default key: $ ssh-set
     ssh-add ~/.ssh/id_rsa
-elif [ -z $2 ]; then
+elif [ -z "$2" ]; then
     # Specific account: $ ssh-set bbbb
-    ssh-add ~/.ssh/$1/id_rsa
+    ssh-add "${HOME}/.ssh/${1}/id_rsa"
 else
     # Specific key: $ ssh-set bbbb id_dsa
-    ssh-add ~/.ssh/$1/$2
+    ssh-add "${HOME}/.ssh/${1}/${2}"
 fi
 
