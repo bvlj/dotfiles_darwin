@@ -31,6 +31,7 @@ in {
       shellcheck
       sqlite-interactive
       texliveSmall
+      zotero
     ];
 
     sessionPath = [
@@ -61,6 +62,7 @@ in {
     mpv          = import ../pkgs/mpv.nix;
     java         = import ../pkgs/java.nix pkgs;
     ripgrep      = import ../pkgs/ripgrep.nix;
+    ssh          = import ../pkgs/ssh.nix;
     vim          = import ../pkgs/vim.nix pkgs;
     vscode       = import ../pkgs/vscode.nix pkgs;
     yazi         = import ../pkgs/yazi.nix;
