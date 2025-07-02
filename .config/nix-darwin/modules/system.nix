@@ -17,10 +17,6 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
-    # activateSettings -u will reload the settings from the database and apply them to the current session,
-    # so we do not need to logout and login again to make the changes take effect.
-    activationScripts.postActivation.text = "/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u";
-
     defaults = {
       NSGlobalDomain = {
         _HIHideMenuBar                           = false;
