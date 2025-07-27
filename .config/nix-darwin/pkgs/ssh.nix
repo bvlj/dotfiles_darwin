@@ -16,10 +16,21 @@
       user     = "bvlj";
     };
 
+    "chokoka.cc" = {
+      hostname = "chokoka.cc";
+      port     = 2400;
+      setEnv   = {
+        TERM = "xterm-256color";
+      };
+    };
+
     "luce" = {
       hostname = "luce.si.usi.ch";
       port     = 22;
       user     = "joey";
+      setEnv   = {
+        TERM = "xterm-256color";
+      };
     };
   };
 }
