@@ -35,6 +35,7 @@
       "cSpell.language" = "en,it";
 
       "editor.bracketPairColorization.enabled" = true;
+      "editor.cursorSmoothCaretAnimation"      = "explicit";
       "editor.cursorStyle"                     = "underline";
       "editor.cursorBlinking"                  =  "blink";
       "editor.fontFamily"                      = "'JetBrains Mono', monospace";
@@ -43,6 +44,7 @@
       "editor.renderWhitespace"                = "all";
       "editor.rulers"                          = [ 80 100 ];
       "editor.scrollBeyondLastLine"            = false;
+      "editor.smoothScrolling"                 = true;
       "editor.tabSize"                         = 2;
 
       "editorconfig.generateAuto" = false;
@@ -88,12 +90,14 @@
       "window.customTitleBarVisibility" = "windowed";
       "window.titleBarStyle"            = "custom";
 
-      "workbench.activityBar.location"                 = "top";
+      "workbench.activityBar.location"                 = "hidden";
       "workbench.colorTheme"                           = "GitHub Dark";
+      "workbench.editor.editorActionsLocation"         = "hidden";
       "workbench.editor.empty.hint"                    = "hidden";
       "workbench.layoutControl.enabled"                = false;
       "workbench.settings.enableNaturalLanguageSearch" = false;
       "workbench.startupEditor"                        = "none";
+      "workbench.statusBar.visible"                    = false;
 
       "[json]" = {
           "editor.defaultFormatter" = "vscode.json-language-features";
