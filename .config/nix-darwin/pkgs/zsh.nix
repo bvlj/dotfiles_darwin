@@ -75,7 +75,7 @@
     dotfiles  = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     # git
     gitpick   = "git cherry-pick";
-    gitlg     = "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative";
+    gitlg     = "git lg";
     # grep
     grep      = "grep --color=auto";
     # ls

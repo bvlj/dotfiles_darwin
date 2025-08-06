@@ -1,4 +1,5 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+set -e
 
 for f in $@; do
   git update-index --no-assume-unchanged $f;
