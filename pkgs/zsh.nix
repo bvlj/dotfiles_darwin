@@ -71,8 +71,6 @@
     "..."     = "cd ../..";
     "...."    = "cd ../../..";
     croot     = "cd \"./\$(git rev-parse --show-cdup 2>/dev/null)\" 2> /dev/null";
-    # dotfiles
-    dotfiles  = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     # git
     gitpick   = "git cherry-pick";
     gitlg     = "git lg";

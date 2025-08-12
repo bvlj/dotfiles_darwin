@@ -2,8 +2,6 @@
   enable = true;
 
   shellAliases = {
-    # .files
-    dotfiles = "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME";
     # cd
     "..."    = "cd ../..";
     "...."   = "cd ../../..";
