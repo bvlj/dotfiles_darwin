@@ -1,4 +1,8 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-dest=$(echo "$1" | sed "s/$2/$3/")
-mv -v "$1" "$dest"
+if [ $# -lt 3 ]; then
+  echo "Usage: $0 \$file \$pattern \$replacement" 1>&2
+  exit 1
+fi
+
+mv -v "$1" "${1/"$2"/"$3"}"
