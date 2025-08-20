@@ -16,9 +16,14 @@
 
   syntax on
 
+  set t_Co=16
+
   set hlsearch
   set incsearch
   set showmatch
+
+  set wildmenu
+  set wildmode=longest:full,full
 
   set viminfofile=NONE
   '';
