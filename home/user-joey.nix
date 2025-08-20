@@ -20,12 +20,14 @@ in {
       android-tools
       bazelisk
       bazel-buildtools
+      cabal-install
       ffmpeg-full
       gawk
       ghc
       gnupg
       gnused
       gnutar
+      haskell-language-server
       imagemagick
       libheif
       nodejs_22
@@ -34,7 +36,6 @@ in {
       rsync
       shellcheck
       sqlite-interactive
-      texliveSmall
       zotero
     ];
 

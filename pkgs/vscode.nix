@@ -15,9 +15,10 @@
       bbenoist.nix
       editorconfig.editorconfig
       github.github-vscode-theme
-      llvm-vs-code-extensions.vscode-clangd
+      haskell.haskell
       # jeandeaual.scheme
       justusadam.language-haskell
+      llvm-vs-code-extensions.vscode-clangd
       # luceresearchlab.vs-jshell
       mads-hartmann.bash-ide-vscode
       ms-python.python
@@ -38,7 +39,7 @@
       "editor.cursorSmoothCaretAnimation"      = "explicit";
       "editor.cursorStyle"                     = "underline";
       "editor.cursorBlinking"                  =  "blink";
-      "editor.fontFamily"                      = "'JetBrains Mono', monospace";
+      "editor.fontFamily"                      = "'Pending Mono', monospace";
       "editor.glyphMargin"                     = false;
       "editor.minimap.enabled"                 = false;
       "editor.renderWhitespace"                = "all";
@@ -77,7 +78,7 @@
       "terminal.integrated.copyOnSelection"          = false;
       "terminal.integrated.cursorBlinking"           = true;
       "terminal.integrated.cursorStyle"              = "underline";
-      "terminal.integrated.fontFamily"               = "JetBrains Mono";
+      "terminal.integrated.fontFamily"               = "Pending Mono";
       "terminal.integrated.macOptionIsMeta"          = true;
       "terminal.integrated.shellIntegration.enabled" = false;
 
@@ -97,7 +98,6 @@
       "workbench.layoutControl.enabled"                = false;
       "workbench.settings.enableNaturalLanguageSearch" = false;
       "workbench.startupEditor"                        = "none";
-      "workbench.statusBar.visible"                    = false;
 
       "[json]" = {
           "editor.defaultFormatter" = "vscode.json-language-features";
