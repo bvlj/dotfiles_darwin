@@ -11,7 +11,6 @@
     enableExtensionUpdateCheck = false;
 
     extensions = with pkgs.vscode-extensions; [
-      bazelbuild.vscode-bazel
       bbenoist.nix
       editorconfig.editorconfig
       github.github-vscode-theme
