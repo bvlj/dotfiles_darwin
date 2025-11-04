@@ -17,6 +17,11 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
+    # Link JDK to /Library/Java/JavaVirtualMachines
+    activationScripts.postActivation.text = ''
+      ln -sf "${pkgs.temurin-bin}/Library/Java/JavaVirtualMachines/temurin-21.jdk" "/Library/Java/JavaVirtualMachines/"
+      '';
+
     defaults = {
       NSGlobalDomain = {
         _HIHideMenuBar                           = false;
