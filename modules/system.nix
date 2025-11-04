@@ -2,10 +2,10 @@
 {
   launchd = {
     user.agents.homeTmpCleanup = {
-      script = "
-      touch /tmp/home-tmp-cleanup.txt;
-      find \"$HOME/tmp\" -mindepth 1 -mtime +2 -delete;
-      ";
+      script = ''
+        touch /tmp/home-tmp-cleanup.txt;
+        find "$HOME/tmp" -mindepth 1 -mtime +2 -delete;
+        '';
       serviceConfig = {
         Label                 = "homeTmpCleanup";
         ProcessType           = "Background";
