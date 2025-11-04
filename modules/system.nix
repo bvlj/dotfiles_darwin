@@ -16,6 +16,12 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  services = {
+    tailscale = {
+      enable = true;
+    };
+  };
+
   system = {
     # Link JDK to /Library/Java/JavaVirtualMachines
     activationScripts.postActivation.text = ''
