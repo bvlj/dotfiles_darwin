@@ -30,12 +30,14 @@ in {
       haskell-language-server
       imagemagick
       libheif
-      nodejs_22
+      nodejs_24
       p7zip
-      python313
+      python314
       rsync
       shellcheck
       sqlite-interactive
+      timelimit
+      uv
       zotero
     ];
 

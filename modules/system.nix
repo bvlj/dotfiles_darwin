@@ -14,6 +14,15 @@
     };
   };
 
+  networking = {
+    applicationFirewall = {
+      enable            = true;
+      allowSigned       = false;
+      allowSignedApp    = false;
+      enableStealthMode = false;
+    };
+  };
+
   security.pam.services.sudo_local.touchIdAuth = true;
 
   services = {
@@ -70,15 +79,19 @@
       };
 
       dock = {
-        autohide                = true;
-        autohide-delay          = 1000.0;
-        expose-group-apps       = false;
-        minimize-to-application = true;
-        mru-spaces              = false;
-        orientation             = "bottom";
-        show-process-indicators = true;
-        show-recents            = true;
-        static-only             = false;
+        autohide                         = true;
+        autohide-delay                   = 1000.0;
+        expose-group-apps                = false;
+        minimize-to-application          = true;
+        mru-spaces                       = false;
+        orientation                      = "bottom";
+        show-process-indicators          = true;
+        show-recents                     = true;
+        static-only                      = false;
+        showAppExposeGestureEnabled      = false;
+        showDesktopGestureEnabled        = false;
+        showLaunchpadGestureEnabled      = true;
+        showMissionControlGestureEnabled = true;
       };
 
       finder = {
@@ -104,9 +117,12 @@
       };
 
       trackpad = {
-        Clicking                = true;
-        TrackpadRightClick      = true;
-        TrackpadThreeFingerDrag = true;
+        ActuateDetents                      = true;
+        Clicking                            = true;
+        TrackpadRightClick                  = true;
+        TrackpadThreeFingerDrag             = true;
+        TrackpadFourFingerHorizSwipeGesture = 2;
+        TrackpadFourFingerVertSwipeGesture  = 2;
       };
     };
 

@@ -11,6 +11,7 @@
     enableExtensionUpdateCheck = false;
 
     extensions = with pkgs.vscode-extensions; [
+      # astral-sh.ty
       bbenoist.nix
       editorconfig.editorconfig
       github.github-vscode-theme
@@ -68,6 +69,8 @@
           "editor.indentSize"   = 4;
           "editor.insertSpaces" = true;
       };
+
+      "python.languageServer" = "None";
 
       "redhat.telemetry.enabled" = false;
 

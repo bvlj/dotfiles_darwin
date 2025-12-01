@@ -12,7 +12,16 @@
     "*.bat   text eol=crlf"
   ];
 
-  extraConfig = {
+  settings = {
+    alias = {
+      coauth = "! git commit --amend --trailer \"Co-Authored-By: $(git config user.name) <$(git config user.email)>\"";
+      lg     = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative";
+      skip   = "! git-skip";
+      unskip = "! git-unskip";
+      squash = "! git-squash";
+      todo   = "! git --no-pager diff --binary --no-color --cached | grep -i '^+.*todo'";
+    };
+
     branch.sort = "committerdate";
 
     core.ignorecase = false;
@@ -43,14 +52,5 @@
       name  = "Joey";
       email = "bevilacquajoey@gmail.com";
     };
-  };
-
-  aliases = {
-    coauth = "! git commit --amend --trailer \"Co-Authored-By: $(git config user.name) <$(git config user.email)>\"";
-    lg     = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative";
-    skip   = "! git-skip";
-    unskip = "! git-unskip";
-    squash = "! git-squash";
-    todo   = "! git --no-pager diff --binary --no-color --cached | grep -i '^+.*todo'";
   };
 }

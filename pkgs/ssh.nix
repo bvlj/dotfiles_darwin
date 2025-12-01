@@ -1,15 +1,28 @@
 {
   enable = true;
 
-  addKeysToAgent = "yes";
+  enableDefaultConfig = false;
 
   extraConfig = ''
-  IgnoreUnknown AddKeysToAgent,UseKeychain
-  UseKeychain yes
-  IdentityFile ~/.ssh/id_rsa
-  '';
-
+    IgnoreUnknown AddKeysToAgent,UseKeychain
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_rsa
+    '';
+#   ForwardAgent no
+  # AddKeysToAgent yes
+  # Compression no
+  # ServerAliveInterval 0
+  # ServerAliveCountMax 3
+  # HashKnownHosts no
+  # UserKnownHostsFile ~/.ssh/known_hosts
+  # ControlMaster no
+  # ControlPath ~/.ssh/master-%r@%n:%p
+  # ControlPersist no
   matchBlocks = {
+    "*" = {
+      addKeysToAgent      = "yes";
+    };
+
     "github.com" = {
       hostname = "ssh.github.com";
       port     = 443;
@@ -17,9 +30,10 @@
     };
 
     "balmy-butterfly" = {
-      hostname = "balmy-butterfly";
-      port     = 2400;
-      setEnv   = {
+      addKeysToAgent = "yes";
+      hostname       = "balmy-butterfly";
+      port           = 2400;
+      setEnv         = {
         TERM = "xterm-256color";
       };
     };
