@@ -63,6 +63,7 @@ in {
 
   programs = {
     bash         = import ../pkgs/bash.nix;
+    ghostty      = import ../pkgs/ghostty.nix;
     git          = import ../pkgs/git.nix;
     home-manager = import ../pkgs/home-manager.nix;
     htop         = import ../pkgs/htop.nix;
