@@ -1,5 +1,5 @@
 { pkgs, ... }:
 {
   enable = true;
-  package = pkgs.temurin-bin;
+  package = pkgs.javaPackages.compiler.temurin-bin.jdk-25;
 }

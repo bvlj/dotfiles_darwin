@@ -34,7 +34,7 @@
   system = {
     # Link JDK to /Library/Java/JavaVirtualMachines
     activationScripts.postActivation.text = ''
-      ln -sf "${pkgs.temurin-bin}/Library/Java/JavaVirtualMachines/temurin-21.jdk" "/Library/Java/JavaVirtualMachines/"
+      ln -sf "${pkgs.javaPackages.compiler.temurin-bin.jdk-25}/Library/Java/JavaVirtualMachines/temurin-25.jdk" "/Library/Java/JavaVirtualMachines/"
       '';
 
     defaults = {
