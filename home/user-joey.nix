@@ -37,6 +37,7 @@ in {
       shellcheck
       sqlite-interactive
       timelimit
+      ty
       uv
       zotero
     ];

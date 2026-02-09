@@ -13,6 +13,7 @@
     extensions = with pkgs.vscode-extensions; [
       # astral-sh.ty
       bbenoist.nix
+      # charliermarsh.ruff
       editorconfig.editorconfig
       github.github-vscode-theme
       haskell.haskell
@@ -85,6 +86,14 @@
       "terminal.integrated.shellIntegration.enabled" = false;
 
       "telemetry.telemetryLevel" = "off";
+
+      "ty.configuration"                = {
+        "rules" = {
+          "possibly-unresolved-reference" = "error";
+        };
+      };
+      "ty.inlayHints.callArgumentNames" = false;
+      "ty.importStrategy"               = "useBundled";
 
       "typescript.surveys.enabled"                 = false;
       "typescript.updateImportsOnFileMove.enabled" = "always";
