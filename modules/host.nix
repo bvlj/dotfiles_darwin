@@ -1,8 +1,5 @@
-{ pkgs, ... }:
-let
-  hostname = "hyperbolic-hare";
-  username = "joey";
-in {
+{ pkgs, username, hostname, ... }:
+{
   networking = {
     computerName = hostname;
     hostName = hostname;
@@ -15,10 +12,8 @@ in {
     primaryUser = username;
   };
 
-  users = {
-    knownUsers = [ username ];
-
-    users."${username}" = {
+  users.users = {
+    "${username}" = {
       home  = "/Users/${username}";
       uid   = 501;
     };

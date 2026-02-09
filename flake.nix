@@ -13,21 +13,28 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }: {
-    darwinConfigurations.hyperbolic-hare = nix-darwin.lib.darwinSystem {
-      modules = [
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, ... }: let
+    username = "joey";
+    hostname = "hyperbolic-hare";
+    platform = "aarch64-darwin";
+  in {
+    darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {
+      modules     = [
         ./modules/nix-core.nix
         ./modules/host.nix
         ./modules/system.nix
 
         home-manager.darwinModules.home-manager {
-          home-manager.useGlobalPkgs    = false;
-          home-manager.useUserPackages  = true;
-          home-manager.extraSpecialArgs = inputs;
-          home-manager.users.joey       = import ./home/user-joey.nix;
+          home-manager = {
+            useGlobalPkgs       = false;
+            useUserPackages     = true;
+            extraSpecialArgs    = { inherit inputs username hostname; };
+            users."${username}" = import ./home/user.nix;
+          };
         }
       ];
-      system = "aarch64-darwin";
+      specialArgs = { inherit inputs self username hostname platform; };
+      system      = platform;
     };
   };
 }

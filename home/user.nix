@@ -1,7 +1,5 @@
-{ lib, pkgs, ... }:
-let
-  username = "joey";
-in {
+{ lib, pkgs, username, ... }:
+{
   home = {
     username      = username;
     homeDirectory = "/Users/${username}";
@@ -20,14 +18,14 @@ in {
       android-tools
       bazelisk
       bazel-buildtools
-      cabal-install
       ffmpeg-full
       gawk
       ghc
       gnupg
       gnused
       gnutar
-      haskell-language-server
+      haskellPackages.cabal-install
+      haskellPackages.haskell-language-server
       imagemagick
       libheif
       nodejs_24
@@ -42,9 +40,7 @@ in {
       zotero
     ];
 
-    sessionPath = [
-      "$HOME/.local/bin"
-    ];
+    sessionPath = [ "$HOME/.local/bin" ];
 
     sessionVariables = {
       XDG_CACHE_HOME  = "$HOME/.cache";
@@ -59,7 +55,7 @@ in {
       SQLITE_HISTORY        = "$HOME/.cache/sqlite_history";
     };
 
-    stateVersion = "25.05";
+    stateVersion = "25.11";
   };
 
   programs = {

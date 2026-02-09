@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, platform, ... }:
 {
   nix = {
     package = pkgs.nix;
@@ -18,7 +18,7 @@
 
   nixpkgs = {
     config.allowUnfree = true;
-    hostPlatform = "aarch64-darwin";
+    hostPlatform = platform;
   };
 
   programs.nix-index.enable = true;
