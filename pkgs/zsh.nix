@@ -7,13 +7,9 @@
 
   history = {
     ignoreSpace = true;
-    path        = "$HOME/.zsh_history";
+    path        = "$XDG_STATE_HOME/zsh/history";
     size        = 8192;
   };
-
-  autosuggestion.enable = true;
-
-  syntaxHighlighting.enable = true;
 
   initContent = "
     # History search
@@ -51,8 +47,11 @@
     PROMPT='%B%F{blue}%(!.%1~.%~)%f \${vcs_info_msg_0_}%(!.#.$)%b '
 
     # Tokens
-    [[ -f \"$HOME/.config/shell/env.tokens.sh\" ]] && source \"$HOME/.config/shell/env.tokens.sh\"
+    [[ -f \"$XDG_CONFIG_HOME/shell/env.tokens.sh\" ]] && source \"$XDG_CONFIG_HOME/shell/env.tokens.sh\"
   ";
+
+  autosuggestion.enable     = true;
+  syntaxHighlighting.enable = true;
 
   plugins = [
     {
@@ -60,8 +59,8 @@
       src = pkgs.fetchFromGitHub {
         owner  = "zsh-users";
         repo   = "zsh-history-substring-search";
-        rev    = "v1.0.2";
-        sha256 = "0y8va5kc2ram38hbk2cibkk64ffrabfv1sh4xm7pjspsba9n5p1y";
+        rev    = "v1.1.0";
+        sha256 = "GSEvgvgWi1rrsgikTzDXokHTROoyPRlU0FVpAoEmXG4=";
       };
     }
   ];
