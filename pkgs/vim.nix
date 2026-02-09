@@ -1,9 +1,8 @@
-{ pkgs, ... }: {
-  enable = true;
-
+{ pkgs, ... }:
+{
+  enable        = true;
   defaultEditor = true;
-
-  extraConfig = ''
+  extraConfig   = ''
   set autoindent
   set smarttab
   filetype plugin indent on
@@ -27,15 +26,13 @@
 
   set viminfofile=NONE
   '';
-
-  plugins = with pkgs.vimPlugins; [
+  plugins       = with pkgs.vimPlugins; [
     vim-better-whitespace
     vim-gitgutter
     vim-indent-guides
     vim-sensible
   ];
-
-  settings = {
+  settings      = {
     expandtab  = true;
     ignorecase = true;
     number     = true;

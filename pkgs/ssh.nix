@@ -8,19 +8,10 @@
     UseKeychain yes
     IdentityFile ~/.ssh/id_rsa
     '';
-#   ForwardAgent no
-  # AddKeysToAgent yes
-  # Compression no
-  # ServerAliveInterval 0
-  # ServerAliveCountMax 3
-  # HashKnownHosts no
-  # UserKnownHostsFile ~/.ssh/known_hosts
-  # ControlMaster no
-  # ControlPath ~/.ssh/master-%r@%n:%p
-  # ControlPersist no
+
   matchBlocks = {
     "*" = {
-      addKeysToAgent      = "yes";
+      addKeysToAgent = "yes";
     };
 
     "github.com" = {

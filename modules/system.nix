@@ -26,9 +26,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
 
   services = {
-    tailscale = {
-      enable = true;
-    };
+    tailscale.enable = true;
   };
 
   system = {

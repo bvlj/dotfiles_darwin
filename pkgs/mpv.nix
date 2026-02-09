@@ -6,7 +6,7 @@
     profile = "high-quality";
     vo      = "gpu-next";
 
-    keep-open = "yes";
+    keep-open             = "yes";
     save-position-on-quit = "yes";
 
     slang    = "en";
