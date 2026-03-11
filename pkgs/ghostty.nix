@@ -19,9 +19,18 @@
     font-family                      = "Iosevka Term SS14";
     font-feature                     = "-calt, -liga, -dlig";
     font-size                        = 12;
-    # Shell
-    shell-integration                = "zsh";
-    shell-integration-features       = "no-cursor, no-title";
+    # Integrations
+    macos-applescript                = false;
+    shell-integration                = "detect";
+    shell-integration-features       = "no-cursor, sudo, no-title, ssh-env, no-ssh-terminfo, no-path";
+    # Keybinds
+    keybind                          = [
+      "copy=copy_to_clipboard:plain"
+      "super+c=copy_to_clipboard:plain"
+    ];
+    # Notifications
+    notify-on-command-finish         = "unfocused";
+    notify-on-command-finish-action  = "notify";
     # UI
     macos-option-as-alt              = true;
     macos-titlebar-proxy-icon        = "hidden";
@@ -29,10 +38,12 @@
     theme                            = "user-theme";
     # Window
     window-colorspace                = "display-p3";
-    window-inherit-working-directory = true;
     window-padding-x                 = 8;
     window-padding-y                 = 8;
     window-theme                     = "auto";
+    # Working directory
+    tab-inherit-working-directory    = true;
+    window-inherit-working-directory = false;
     # Updates
     auto-update                      = "check";
     auto-update-channel              = "stable";
